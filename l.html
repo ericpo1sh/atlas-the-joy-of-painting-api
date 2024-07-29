@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painting Filter</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .dropdown-checkbox {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-checkbox-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 230px;
+      border: 1px solid #ccc;
+      z-index: 1;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .dropdown-checkbox:hover .dropdown-checkbox-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Filter Paintings</h1>
+  <form id="filterForm">
+    <label for="month">Month:</label>
+    <select id="month">
+      <option value="">Select Month</option>
+      <option value="January">January</option>
+      <option value="February">February</option>
+      <option value="March">March</option>
+      <option value="April">April</option>
+      <option value="May">May</option>
+      <option value="June">June</option>
+      <option value="July">July</option>
+      <option value="August">August</option>
+      <option value="September">September</option>
+      <option value="October">October</option>
+      <option value="November">November</option>
+      <option value="December">December</option>
+    </select>
+
+    <label>Subjects:</label>
+    <div class="dropdown-checkbox">
+      <button type="button">Select Subjects</button>
+      <div class="dropdown-checkbox-content" id="subjectFilters">
+        <!-- Add subject checkboxes here -->
+        <label><input type="checkbox" name="subject" value="APPLE_FRAME"> Apple Frame</label>
+        <label><input type="checkbox" name="subject" value="AURORA_BOREALIS"> Aurora Borealis</label>
+        <label><input type="checkbox" name="subject" value="BARN"> Barn</label>
+        <label><input type="checkbox" name="subject" value="BEACH"> Beach</label>
+        <label><input type="checkbox" name="subject" value="BOAT"> Boat</label>
+        <label><input type="checkbox" name="subject" value="BRIDGE"> Bridge</label>
+        <label><input type="checkbox" name="subject" value="BUILDING"> Building</label>
+        <label><input type="checkbox" name="subject" value="BUSHES"> Bushes</label>
+        <label><input type="checkbox" name="subject" value="CABIN"> Cabin</label>
+        <label><input type="checkbox" name="subject" value="CACTUS"> Cactus</label>
+        <label><input type="checkbox" name="subject" value="CIRCLE_FRAME"> Circle Frame</label>
+        <label><input type="checkbox" name="subject" value="CIRRUS"> Cirrus</label>
+        <label><input type="checkbox" name="subject" value="CLIFF"> Cliff</label>
+        <label><input type="checkbox" name="subject" value="CLOUDS"> Clouds</label>
+        <label><input type="checkbox" name="subject" value="CONIFER"> Conifer</label>
+        <label><input type="checkbox" name="subject" value="CUMULUS"> Cumulus</label>
+        <label><input type="checkbox" name="subject" value="DECIDUOUS"> Deciduous</label>
+        <label><input type="checkbox" name="subject" value="DIANE_ANDRE"> Diane Andre</label>
+        <label><input type="checkbox" name="subject" value="DOCK"> Dock</label>
+        <label><input type="checkbox" name="subject" value="DOUBLE_OVAL_FRAME"> Double Oval Frame</label>
+        <label><input type="checkbox" name="subject" value="FARM"> Farm</label>
+        <label><input type="checkbox" name="subject" value="FENCE"> Fence</label>
+        <label><input type="checkbox" name="subject" value="FIRE"> Fire</label>
+        <label><input type="checkbox" name="subject" value="FLORIDA_FRAME"> Florida Frame</label>
+        <label><input type="checkbox" name="subject" value="FLOWERS"> Flowers</label>
+        <label><input type="checkbox" name="subject" value="FOG"> Fog</label>
+        <label><input type="checkbox" name="subject" value="FRAMED"> Framed</label>
+        <label><input type="checkbox" name="subject" value="GRASS"> Grass</label>
+        <label><input type="checkbox" name="subject" value="GUEST"> Guest</label>
+        <label><input type="checkbox" name="subject" value="HALF_CIRCLE_FRAME"> Half Circle Frame</label>
+        <label><input type="checkbox" name="subject" value="HALF_OVAL_FRAME"> Half Oval Frame</label>
+        <label><input type="checkbox" name="subject" value="HILLS"> Hills</label>
+        <label><input type="checkbox" name="subject" value="LAKE"> Lake</label>
+        <label><input type="checkbox" name="subject" value="LAKES"> Lakes</label>
+        <label><input type="checkbox" name="subject" value="LIGHTHOUSE"> Lighthouse</label>
+        <label><input type="checkbox" name="subject" value="MILL"> Mill</label>
+        <label><input type="checkbox" name="subject" value="MOON"> Moon</label>
+        <label><input type="checkbox" name="subject" value="MOUNTAIN"> Mountain</label>
+        <label><input type="checkbox" name="subject" value="MOUNTAINS"> Mountains</label>
+        <label><input type="checkbox" name="subject" value="NIGHT"> Night</label>
+        <label><input type="checkbox" name="subject" value="OCEAN"> Ocean</label>
+        <label><input type="checkbox" name="subject" value="OVAL_FRAME"> Oval Frame</label>
+        <label><input type="checkbox" name="subject" value="PALM_TREES"> Palm Trees</label>
+        <label><input type="checkbox" name="subject" value="PATH"> Path</label>
+        <label><input type="checkbox" name="subject" value="PERSON"> Person</label>
+        <label><input type="checkbox" name="subject" value="PORTRAIT"> Portrait</label>
+        <label><input type="checkbox" name="subject" value="RECTANGLE_3D_FRAME"> Rectangle 3D Frame</label>
+        <label><input type="checkbox" name="subject" value="RECTANGULAR_FRAME"> Rectangular Frame</label>
+        <label><input type="checkbox" name="subject" value="RIVER"> River</label>
+        <label><input type="checkbox" name="subject" value="ROCKS"> Rocks</label>
+        <label><input type="checkbox" name="subject" value="SEASHELL_FRAME"> Seashell Frame</label>
+        <label><input type="checkbox" name="subject" value="SNOW"> Snow</label>
+        <label><input type="checkbox" name="subject" value="SNOWY_MOUNTAIN"> Snowy Mountain</label>
+        <label><input type="checkbox" name="subject" value="SPLIT_FRAME"> Split Frame</label>
+        <label><input type="checkbox" name="subject" value="STEVE_ROSS"> Steve Ross</label>
+        <label><input type="checkbox" name="subject" value="STRUCTURE"> Structure</label>
+        <label><input type="checkbox" name="subject" value="SUN"> Sun</label>
+        <label><input type="checkbox" name="subject" value="TOMB_FRAME"> Tomb Frame</label>
+        <label><input type="checkbox" name="subject" value="TREE"> Tree</label>
+        <label><input type="checkbox" name="subject" value="TREES"> Trees</label>
+        <label><input type="checkbox" name="subject" value="TRIPLE_FRAME"> Triple Frame</label>
+        <label><input type="checkbox" name="subject" value="WATERFALL"> Waterfall</label>
+        <label><input type="checkbox" name="subject" value="WAVES"> Waves</label>
+        <label><input type="checkbox" name="subject" value="WINDMILL"> Windmill</label>
+        <label><input type="checkbox" name="subject" value="WINDOW_FRAME"> Window Frame</label>
+        <label><input type="checkbox" name="subject" value="WINTER"> Winter</label>
+        <label><input type="checkbox" name="subject" value="WOOD_FRAMED"> Wood Framed</label>
+      </div>
+    </div>
+
+    <label>Colors:</label>
+    <div class="dropdown-checkbox">
+      <button type="button">Select Colors</button>
+      <div class="dropdown-checkbox-content" id="colorFilters">
+        <label><input type="checkbox" name="color" value="Black_Gesso"> Black Gesso</label>
+        <label><input type="checkbox" name="color" value="Bright_Red"> Bright Red</label>
+        <label><input type="checkbox" name="color" value="Burnt_Umber"> Burnt Umber</label>
+        <label><input type="checkbox" name="color" value="Cadmium_Yellow"> Cadmium Yellow</label>
+        <label><input type="checkbox" name="color" value="Dark_Sienna"> Dark Sienna</label>
+        <label><input type="checkbox" name="color" value="Indian_Red"> Indian Red</label>
+        <label><input type="checkbox" name="color" value="Indian_Yellow"> Indian Yellow</label>
+        <label><input type="checkbox" name="color" value="Liquid_Black"> Liquid Black</label>
+        <label><input type="checkbox" name="color" value="Liquid_Clear"> Liquid Clear</label>
+        <label><input type="checkbox" name="color" value="Midnight_Black"> Midnight Black</label>
+        <label><input type="checkbox" name="color" value="Phthalo_Blue"> Phthalo Blue</label>
+        <label><input type="checkbox" name="color" value="Phthalo_Green"> Phthalo Green</label>
+        <label><input type="checkbox" name="color" value="Prussian_Blue"> Prussian Blue</label>
+        <label><input type="checkbox" name="color" value="Sap_Green"> Sap Green</label>
+        <label><input type="checkbox" name="color" value="Titanium_White"> Titanium White</label>
+        <label><input type="checkbox" name="color" value="Van_Dyke_Brown"> Van Dyke Brown</label>
+        <label><input type="checkbox" name="color" value="Yellow_Ochre"> Yellow Ochre</label>
+        <label><input type="checkbox" name="color" value="Alizarin_Crimson"> Alizarin Crimson</label>
+      </div>
+    </div>
+
+    <button type="submit">Filter</button>
+  </form>
+
+  <h2>Results</h2>
+  <table id="resultsTable">
+    <thead>
+      <tr>
+        <th>Season/Episode</th>
+        <th>Painting Title</th>
+        <th>Month</th>
+        <th>Day</th>
+        <th>Year</th>
+        <th>Youtube Link</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    document.getElementById('filterForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const month = document.getElementById('month').value;
+      const subjectInputs = document.querySelectorAll('input[name="subject"]:checked');
+      const subjects = Array.from(subjectInputs).map(input => input.value).join(',');
+      const colorInputs = document.querySelectorAll('input[name="color"]:checked');
+      const colors = Array.from(colorInputs).map(input => input.value).join(',');
+
+      const query = new URLSearchParams({ month, subjects, colors }).toString();
+      const url = `http://localhost:3000/data?${query}`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          const tableBody = document.getElementById('resultsTable').querySelector('tbody');
+          tableBody.innerHTML = '';
+
+          data.forEach(item => {
+            const row = document.createElement('tr');
+
+            const seasonEpisode = document.createElement('td');
+            seasonEpisode.textContent = item.season_episode;
+            row.appendChild(seasonEpisode);
+
+            const paintingTitle = document.createElement('td');
+            paintingTitle.textContent = item.painting_title;
+            row.appendChild(paintingTitle);
+
+            const month = document.createElement('td');
+            month.textContent = item.month;
+            row.appendChild(month);
+
+            const day = document.createElement('td');
+            day.textContent = item.day;
+            row.appendChild(day);
+
+            const year = document.createElement('td');
+            year.textContent = item.year;
+            row.appendChild(year);
+
+            const youtubeLink = document.createElement('td');
+            youtubeLink.innerHTML = `<a href="${item.youtube_src}" target="_blank">Watch</a>`;
+            row.appendChild(youtubeLink);
+
+            tableBody.appendChild(row);
+          });
+        })
+        .catch(error => console.error('Error:', error));
+    });
+  </script>
+</body>
+</html>

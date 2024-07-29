@@ -1,0 +1,145 @@
+body {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.top-container img {
+  width: auto;
+  height: 400px;
+}
+
+#filterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+#month {
+  text-align: center;
+  width: 120px;
+  font-size: 17px;
+  background-color: #323232;
+  color: white;
+  border-radius: 6px;
+  border: #323232;
+  cursor: pointer;
+}
+
+
+#submit {
+  margin-top: 20px;
+  text-align: center;
+  width: 100px;
+  height: auto;
+  font-size: 17px;
+  background-color: #323232;
+  color: white;
+  border-radius: 6px;
+  border: #323232;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+#submit:hover {
+  transition: 0.6s;
+  transform: scale(1.1);
+}
+
+#subjectFilters {
+  background-color: #323232;
+  color: white;
+}
+
+#colorFilters {
+  background-color: #323232;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+th {
+  background-color: #f2f2f2;
+}
+.dropdown-checkbox {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-checkbox-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  border: 1px solid #ccc;
+  z-index: 1;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.dropdown-checkbox:hover .dropdown-checkbox-content {
+  display: block;
+}
+
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #323232;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.block {
+  position: relative;
+  width: 50%;
+  height: 400px;
+  background: linear-gradient(0deg, #000, #272727);
+}
+
+.moving-glow:before, .moving-glow:after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+      #0000ff, #00ff00,#ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(99% + 10px);
+  height: calc(99% + 10px);
+  z-index: -1;
+  animation: anim-moving-glow 20s linear infinite;
+
+}
+
+@keyframes anim-moving-glow {
+  0% {
+      background-position: 0 0;
+  }
+  50% {
+      background-position: 400% 0;
+  }
+  100% {
+      background-position: 0 0;
+  }
+}
+
+.moving-glow:after {
+  filter: blur(30px);
+}
