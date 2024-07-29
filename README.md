@@ -1,3 +1,14 @@
+## Bob Ross Episodes filter!
+
+### How it works:
+![Screenshot 2024-07-29 161447](https://github.com/user-attachments/assets/e0c1796c-b345-445b-8b11-4c0a6348cf1a)
+#### Select your filter query then click submit!
+![Screenshot 2024-07-29 161505](https://github.com/user-attachments/assets/b303b64b-252f-4bd1-a90c-4df9c0a32e3c)
+
+## How to install
+#### clone this repository and then run `node server.js` in root to start the server.
+#### After that, host index.html locally, or just click on the file and open it in the browser.
+
 ## Resources
 
 - [Bob Ross Episode Data CSV](https://intranet.atlasschool.com/rltoken/PAGbinXyYEO-rCGA_UNk8w)
