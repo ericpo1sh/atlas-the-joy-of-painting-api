@@ -124,7 +124,7 @@ th {
   width: calc(99% + 10px);
   height: calc(99% + 10px);
   z-index: -1;
-  animation: anim-moving-glow 20s linear infinite;
+  animation: anim-moving-glow 110s linear infinite;
 
 }
 
