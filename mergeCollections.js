@@ -1,7 +1,9 @@
 const { MongoClient } = require('mongodb');
+const dotenv = require('dotenv')
+dotenv.config()
 
 // DO NOT RUN, UR GONNA BREAK THE DATABSE BUT THIS IS WHAT I DID TO MERGE ALL COLLECTIONS
-const url = 'mongodb+srv://root:root@cluster0.7mbnhsc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const url = process.env.MONGO_URL
 const dbName = 'CSV';
 
 const colorsCollectionName = 'csv_colors';

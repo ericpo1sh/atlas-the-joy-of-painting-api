@@ -1,9 +1,11 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const cors = require('cors');
+const dotenv = require('dotenv')
 
+dotenv.config()
 // MongoDB connection URL and database name, do not modify.
-const url = 'mongodb+srv://root:root@cluster0.7mbnhsc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const url = process.env.MONGO_URL
 const dbName = 'CSV';
 const collectionName = 'mergedCollection';
 
